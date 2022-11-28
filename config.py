@@ -1,0 +1,1 @@
+gameList=["RocketLeague.exe","r5apex.exe","eldenring.exe"]
