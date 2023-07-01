@@ -1,1 +1,1 @@
-gameList=["RocketLeague.exe","r5apex.exe","eldenring.exe"]
+gameList=["RocketLeague.exe","r5apex.exe","eldenring.exe","noita.exe","InsurgencyClient-Win64-Shipping.exe"]

@@ -10,6 +10,7 @@ from pyautogui import press, typewrite, hotkey
 
 dateFile = 'G:\Tech_Stuff\CODE\Auto_OBS_Recorder\Date.txt'
 videoFilePath = 'G:\Tech_Stuff\Highlights\REC\*'
+stableDiffusionOutputFilePath = 'G:\Tech_Stuff\stableDiffusion\stable-diffusion-webui\outputs\*'
 bakkesMod = 'C:\ProgramData\Microsoft\Windows\Start Menu\Programs\BakkesMod.lnk'
 bakkesModProcess = 'BakkesMod.exe'
 BakkesModIsRunning=False
@@ -25,6 +26,9 @@ def performDateCheck():
             File.close()
         with open(dateFile, 'w') as File:
             if(oldDate != todaysDate):
+                print('Deleting stable diffusion output')
+                deleteStableDiffusionOutput()
+            if(int(todaysDate) - int(oldDate) > 2):
                 print('Deleting old videos')
                 deleteOldVideos()
             else:
@@ -45,8 +49,16 @@ def deleteOldVideos():
             os.remove(files)
         print('Deleted all videos!')
     except Exception as e:
-        print('Not deleted',e)     
+        print('Not deleted videos',e)     
 
+def deleteStableDiffusionOutput():
+    try:
+        folder = glob.glob(stableDiffusionOutputFilePath)
+        for files in folder:
+            os.remove(files)
+        print('Deleted all stable diffusion files!')
+    except Exception as e:
+        print('Not deleted stable diffusion files',e)  
 
 def checkIfGameIsRunning():
     global BakkesModIsRunning
