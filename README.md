@@ -1,6 +1,6 @@
 <h1 align="center">Welcome to AutoObsRecorder 👋</h1>
 
-<img src="auto-obs.recorder.png" class="center"/>
+<img src="https://raw.githubusercontent.com/NastyJack/AutoObsRecorder/master/auto-obs-recorder-icon.png" class="center"/>
 
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
