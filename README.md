@@ -1,19 +1,12 @@
 <h1 align="center">Welcome to AutoObsRecorder 👋</h1>
 
-<img src="auto-obs.recorder.png" class="center"/>
+![auto-obs-recorder-icon](https://github.com/NastyJack/AutoObsRecorder/assets/44137857/da0eb4c4-4b1a-4058-bdaa-edea40b7796c)
 
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
 </p>
 
-<style>
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 20%;
-}
-</style>
+
 
 > A python script to automatically record gameplays using OBS. The script will also auto-delete recorded gameplays older than 3 days, so the disk space doesn't get overwhelmed.
 
@@ -25,7 +18,7 @@
 
 * Set OBS to always start at windows startup.
 
-* Set the directories for the following in helpers.py dateFile, videoFilePath, bakkesMod.
+* Set the directories for the following in helpers.py : dateFile, videoFilePath, bakkesMod.
 
 * Open config.py and add the .exe filename for the game you would like to enable recording for.
 
