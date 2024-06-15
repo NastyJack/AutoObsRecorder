@@ -63,7 +63,7 @@ def delete_files_older_than(videoFilePath, days):
                 file_path = os.path.join(root, file)
                 creation_date = get_creation_date(file_path)
                 delta = today - creation_date
-                if delta.days > days:
+                if delta.days >= days:
                     os.remove(file_path)
                     print(f"Deleted file: {file_path}")
 

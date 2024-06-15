@@ -3,12 +3,15 @@ import sys
 from pyautogui import hotkey
 
 from helpers import *
+import os
 
 isRunning=False
 isRecording=False
 turnOffOnce=False
 toStop=True
-failSafe='G:\Tech_Stuff\CODE\Auto_OBS_Recorder\writeFalseHereToStop.txt'
+failSafe=r'G:\Tech_Stuff\CODE\Auto_OBS_Recorder\writeFalseHereToStop.txt'
+deleteOBS_safeMode = r'C:\Users\Nasty_Jack\AppData\Roaming\obs-studio\safe_mode'
+obsDirectory = r'E:\Software\obs-studio\bin\64bit'
 
 def main():
     global isRunning
@@ -18,7 +21,7 @@ def main():
 
     #Create a file if it doesn't exist
     with open(failSafe, 'w') as File:
-        File.write('True') 
+        File.write('True')     
     
     #Check if date matches to today's date. If not clear videos from folder
     performDateCheck()
