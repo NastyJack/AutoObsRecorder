@@ -4,6 +4,8 @@ from config import gameList
 from pywinauto import Application
 from pydub import AudioSegment
 from pydub.playback import play
+import vlc
+# from playsound import playsound
 
 import pyautogui
 import datetime
@@ -16,10 +18,10 @@ import time
 import keyboard
 
 
-dateFile = 'G:\Tech_Stuff\CODE\Auto_OBS_Recorder\Date.txt'
-videoFilePath = 'G:\Tech_Stuff\Highlights\REC\\'
-stableDiffusionOutputFilePath = 'G:\Tech_Stuff\stableDiffusion\stable-diffusion-webui\outputs\\'
-bakkesMod = 'C:\ProgramData\Microsoft\Windows\Start Menu\Programs\BakkesMod.lnk'
+dateFile = r'G:\\Tech_Stuff\\CODE\\Auto_OBS_Recorder\\Date.txt'
+videoFilePath = r'G:\\Tech_Stuff\\Highlights\\REC\\'
+stableDiffusionOutputFilePath = r'G:\\Tech_Stuff\\stableDiffusion\\stable-diffusion-webui\\outputs\\'
+bakkesMod = r'C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\BakkesMod.lnk'
 bakkesModProcess = 'BakkesMod.exe'
 BakkesModIsRunning = False
 todaysDate = datetime.date.today().strftime("%d")
@@ -189,7 +191,7 @@ def toggleRecording(ONorOFF):
     global BakkesModIsRunning
     if (ONorOFF == 'ON'):
         hotkey('alt', 'pageup', interval=0.25)
-        play_mp3('G:\Tech_Stuff\CODE\Auto_OBS_Recorder\mp3\ON.mp3')
+        play_mp3(r'G:\\Tech_Stuff\\CODE\\Auto_OBS_Recorder\\mp3\\ON.mp3')
         # playsound('G:\Tech_Stuff\CODE\Auto_OBS_Recorder\mp3\ON.mp3')
         print('\nRecording ON\n')
         return True
@@ -199,15 +201,17 @@ def toggleRecording(ONorOFF):
             toggleBakkesMod('OFF')
             BakkesModIsRunning = False
         BakkesModIsRunning = False
-        play_mp3('G:\Tech_Stuff\CODE\Auto_OBS_Recorder\mp3\OFF.mp3')
+        play_mp3(r'G:\\Tech_Stuff\\CODE\\Auto_OBS_Recorder\\mp3\\OFF.mp3')
         # playsound('G:\Tech_Stuff\CODE\Auto_OBS_Recorder\mp3\OFF.mp3')
         print('\nRecording OFF\n')
         return False
 
 
 def play_mp3(file_path):
-    audio = AudioSegment.from_file(file_path, format="mp3")
-    play(audio)
+    p = vlc.MediaPlayer("file:///" + file_path)
+    p.play()
+    # audio = AudioSegment.from_file(file_path, format="mp3")
+    # play(audio)
 
 
 def toggleBakkesMod(ONorOFF):
