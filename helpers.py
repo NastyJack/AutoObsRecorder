@@ -21,6 +21,7 @@ import keyboard
 dateFile = r'G:\\Tech_Stuff\\CODE\\Auto_OBS_Recorder\\Date.txt'
 videoFilePath = r'G:\\Tech_Stuff\\Highlights\\REC\\'
 stableDiffusionOutputFilePath = r'G:\\Tech_Stuff\\stableDiffusion\\stable-diffusion-webui\\outputs\\'
+roopUnleashedOutputFilePath = r'G:\\Tech_Stuff\\AI_Tools\\roop-unleashed\\roop-unleashed\\temp'
 bakkesMod = r'C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\BakkesMod.lnk'
 bakkesModProcess = 'BakkesMod.exe'
 BakkesModIsRunning = False
@@ -154,6 +155,7 @@ def cycle_playlists():
 def deleteStableDiffusionOutput():
     try:
         shutil.rmtree(stableDiffusionOutputFilePath)
+        shutil.rmtree(roopUnleashedOutputFilePath)
         print('Deleted all stable diffusion files!')
     except Exception as e:
         print('Not deleted stable diffusion files', e)
